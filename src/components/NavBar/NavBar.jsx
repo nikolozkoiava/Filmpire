@@ -16,11 +16,14 @@ import {
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
+import { useState } from "react";
+import { Sidebar } from "..";
 
 const NavBar = () => {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:639px)");
   const theme = useTheme();
   const isAuthenticated = true;
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <>
@@ -31,7 +34,7 @@ const NavBar = () => {
               color="inherit"
               edge="start"
               className="outline-none mr-2 hidden sm:block"
-              onClick={() => {}}
+              onClick={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
             >
               <Menu />
             </IconButton>
@@ -50,7 +53,7 @@ const NavBar = () => {
                 color="inherit"
                 component={Link}
                 to={`/profile/:id`}
-                className=""
+                className="hover:text-white no-underline"
                 onClick={() => {}}
               >
                 {!isMobile && <>My Movies &nbsp; </>}
@@ -65,6 +68,26 @@ const NavBar = () => {
           {isMobile && "Search..."}
         </Toolbar>
       </AppBar>
+      <div>
+        <nav className="sm:w-60 sm:flex-shrink-0">
+          {isMobile ? (
+            <Drawer
+              variant="temporary"
+              anchor="right"
+              open={mobileOpen}
+              onClose={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
+              className="w-60"
+              ModalProps={{ keepMounted: true }}
+            >
+              <Sidebar setMobileOpen={setMobileOpen} />
+            </Drawer>
+          ) : (
+            <Drawer className="w-60" variant="permanent" open>
+              <Sidebar setMobileOpen={setMobileOpen} />
+            </Drawer>
+          )}
+        </nav>
+      </div>
     </>
   );
 };
