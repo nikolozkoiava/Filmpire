@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 
 import {
   Divider,
@@ -16,6 +16,7 @@ import { useGetGenresQuery } from "../../services/TMDB";
 import genreIcons from "../../assets/genres";
 import { useDispatch, useSelector } from "react-redux";
 import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
+import { ColorModeContext } from "../../utils/ToggleColorMode";
 
 const redLogo =
   "https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2fc82006e.png";
@@ -35,6 +36,12 @@ const Sidebar = ({ setMobileOpen }) => {
   const theme = useTheme();
   const { data, isFetching } = useGetGenresQuery();
   const dispatch = useDispatch();
+
+  const { mode } = useContext(ColorModeContext);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [genreIdOrCategoryName]);
 
   return (
     <>
@@ -57,7 +64,7 @@ const Sidebar = ({ setMobileOpen }) => {
               <ListItemIcon>
                 <img
                   src={genreIcons[label.toLowerCase()]}
-                  className="dark:filter-none dark-mode:filter-invert"
+                  className={mode === "dark" ? "filter invert" : ""}
                   height={10}
                   width={30}
                 />
@@ -84,7 +91,7 @@ const Sidebar = ({ setMobileOpen }) => {
                 <ListItemIcon>
                   <img
                     src={genreIcons[name.toLowerCase()]}
-                    className="dark:filter-none dark-mode:filter-invert"
+                    className={mode === "dark" ? "filter invert" : ""}
                     height={10}
                     width={30}
                   />

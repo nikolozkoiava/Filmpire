@@ -8,12 +8,15 @@ import { searchMovie } from "../../features/currentGenreOrCategory";
 const Search = () => {
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       dispatch(searchMovie(query));
     }
   };
+
+  if (location.pathname !== "/") return null;
 
   return (
     <div className=" flex justify-center w-full sm:flex-none sm:justify-start sm:w-auto mt-[-10px] mb-[10px] sm:mt-0 sm:mb-0">

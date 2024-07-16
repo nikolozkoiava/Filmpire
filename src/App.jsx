@@ -14,7 +14,7 @@ function App() {
     <div className="flex h-full">
       <CssBaseline />
       <NavBar />
-      <main className="flex-grow p-[2rem]">
+      <main className="flex-grow p-[2rem] w-full">
         <div className="h-16" />
         <Routes>
           <Route path="/movie/:id" element={<MoviesInformation />} />

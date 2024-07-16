@@ -3,7 +3,14 @@
 @tailwind utilities;
 
 
+::-webkit-scrollbar {
+    width: 7px;
+}
 
-.invert {
-    filter: invert(1);
+::-webkit-scrollbar-track {
+    background: #cfcfcf;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a5a5a5;
 }

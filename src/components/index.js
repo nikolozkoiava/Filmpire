@@ -5,5 +5,7 @@ export { default as Profile } from "./Profile/Profile";
 export { default as NavBar } from "./NavBar/NavBar";
 export { default as Sidebar } from "./Sidebar/Sidebar";
 export { default as MovieList } from "./MovieList/MoviesList";
-export { default as Movie } from "./Moviee/Movie";
+export { default as Movie } from "./Moviee/Movie.jsx";
 export { default as Search } from "./Search/Search";
+export { default as Pagination } from "./Pagination/Pagination";
+export { default as RatedCards } from "./RatedCards/RatedCards.jsx";
