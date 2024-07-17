@@ -8,7 +8,7 @@ Filmpire integrates powerful creativity with cutting-edge JavaScript tools like 
 
 This project was bootstrapped with Create React App.
 
-#Available Scripts
+## Available Scripts
 
 In the project directory, you can run:
 
