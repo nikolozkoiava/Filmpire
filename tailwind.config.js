@@ -10,6 +10,12 @@ export default {
       borderRadius: {
         custom: "20px",
       },
+      backgroundColor: {
+        "custom-rgba": "rgba(0, 0, 0, 0.575)",
+      },
+      backgroundBlendMode: {
+        darken: "darken",
+      },
     },
   },
   plugins: [],

@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import { useSelector } from "react-redux";
 
-import { MovieList, Pagination } from "../index";
+import { FeaturedMovie, MovieList, Pagination } from "../index";
 import { useGetMoviesQuery } from "../../services/TMDB";
 
 function Movies() {
@@ -45,7 +45,8 @@ function Movies() {
 
   return (
     <div>
-      <MovieList movies={data} numberOfMovies={18} excludeFirst />
+      <FeaturedMovie movie={data.results[0]} />
+      <MovieList movies={data} numberOfMovies={19} excludeFirst />
       <Pagination
         currentPage={page}
         setPage={setPage}

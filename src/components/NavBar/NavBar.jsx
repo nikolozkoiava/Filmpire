@@ -94,7 +94,7 @@ const NavBar = () => {
                 <Avatar
                   className="w-7 h-7"
                   alt="Profile"
-                  src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg"
+                  src={`https://www.themoviedb.org/t/p/w64_and_h64_face${user?.avatar?.tmdb?.avatar_path}`}
                 />
               </Button>
             )}
