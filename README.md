@@ -2,14 +2,16 @@
 ![Desktop](https://github.com/user-attachments/assets/0355f78a-6e8b-4a67-9635-55861bd219fc)
 
 
-Filmpire integrates powerful creativity with cutting-edge JavaScript tools like React.js, Redux, and Material UI. It features robust functionalities such as user authentication, dark mode, categorized movie sorting, detailed views of movies and actors, and options to add movies to favorites or watchlists. Tailwind CSS is utilized for styling, ensuring streamlined design and responsiveness throughout the application.
+Filmpire integrates powerful creativity with cutting-edge JavaScript tools like React.js, Redux, and Material UI. 
+
+It features robust functionalities such as user authentication, dark mode, categorized movie sorting, detailed views of movies and actors, and options to add movies to favorites or watchlists. Tailwind CSS is utilized for styling, ensuring streamlined design and responsiveness throughout the application.
 
 # Getting Started with Create React App
 
 This project was bootstrapped with Create React App.
 
 ## Available Scripts
-
+**User Authentication:**
 In the project directory, you can run:
 
 npm start
